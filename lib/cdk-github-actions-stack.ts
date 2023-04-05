@@ -17,7 +17,7 @@ export class CdkGithubActionsStack extends cdk.Stack {
     // defines an API Gateway REST API resource backed by our "hello" function.
     new apigateway.LambdaRestApi(this, 'GithubActionsEndpoint', {
       handler: hello,
-      endpointTypes: [ apigateway.EndpointType.EDGE ],
+      endpointTypes: [ apigateway.EndpointType.REGIONAL ],
     });
   }
 }
