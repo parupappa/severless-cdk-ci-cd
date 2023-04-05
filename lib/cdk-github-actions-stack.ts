@@ -10,7 +10,7 @@ export class CdkGithubActionsStack extends cdk.Stack {
     // Create a Lambda function with code from the "src/lambda" directory
     const hello = new lambda.Function(this, 'HelloHandler', {
       runtime: lambda.Runtime.NODEJS_16_X,
-      code: lambda.Code.fromAsset('src/lambda'),
+      code: lambda.Code.fromAsset('src/'),
       handler: 'hello.handler',
     });
 
