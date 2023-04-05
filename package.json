@@ -10,8 +10,8 @@
     "test": "jest",
     "test:app": "jest --testMatch **/message.test.ts",
     "cdk": "cdk",
-    "cdk:diff": "cdk:diff || true",
-    "cdk:deploy": "cdk:deploy --require-approval never"
+    "cdk:diff": "cdk diff || true",
+    "cdk:deploy": "cdk deploy --require-approval never"
   },
   "devDependencies": {
     "@types/jest": "^29.4.0",
