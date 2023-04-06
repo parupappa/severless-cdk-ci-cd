@@ -20,10 +20,14 @@ jobs:
       - name: Build
         run: npm run build
 
+      - name: Snapshot tests
+        if: contains(github.event_name, 'pull_request')
+        run: npm run test:snapshot
+
       - name: Unit tests
         if: contains(github.event_name, 'pull_request')
         run: npm run test:app
-          
+
       - name: CDK Diff Check
         if: contains(github.event_name, 'pull_request')
         run: npm run cdk:diff
