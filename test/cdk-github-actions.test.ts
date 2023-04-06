@@ -7,7 +7,4 @@ test('SnapshotTest', () => {
   const stack = new CdkGithubActionsStack(app, 'CdkGithubActionsStack', {});
   const template = Template.fromStack(stack);
   expect(template.toJSON()).toMatchSnapshot();
-  if (expect.getState().snapshot.matched) {
-    console.log("snapshot tests passed");
-  }
 });
