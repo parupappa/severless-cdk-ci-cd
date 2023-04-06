@@ -33,8 +33,8 @@ jobs:
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
 
       - name: Snapshot tests
-        if: contains(github.event_name, 'pull_request')
-        run: npm run test:snapshot
+        if: contains(github.event_name, 'push')
+        run: npm run test:snapshot -- -u
 
       - name: CDK Deploy
         if: contains(github.event_name, 'push')
