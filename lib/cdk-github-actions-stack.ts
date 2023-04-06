@@ -1,8 +1,10 @@
-import * as cdk from '@aws-cdk/core';
-import * as lambda from '@aws-cdk/aws-lambda';
-import * as apigateway from '@aws-cdk/aws-apigateway';
-export class CdkGithubActionsStack extends cdk.Stack {
-  constructor(scope: cdk.App, id: string, props?: cdk.StackProps) {
+import { Stack, StackProps } from 'aws-cdk-lib';
+import * as lambda from 'aws-cdk-lib/aws-lambda';
+import * as apigateway from 'aws-cdk-lib/aws-apigateway';
+import { Construct } from 'constructs';
+
+export class CdkGithubActionsStack extends Stack {
+  constructor(scope: Construct, id: string, props?: StackProps) {
     super(scope, id, props);
 
     // The code that defines your stack goes here
@@ -19,5 +21,6 @@ export class CdkGithubActionsStack extends cdk.Stack {
       handler: hello,
       endpointTypes: [ apigateway.EndpointType.REGIONAL ],
     });
+
   }
 }
